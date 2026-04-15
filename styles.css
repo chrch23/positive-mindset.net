@@ -54,8 +54,7 @@ img { max-width: 100%; display: block; }
   position: sticky;
   top: 0;
   z-index: 50;
-  backdrop-filter: blur(20px);
-  background: rgba(7, 17, 26, 0.62);
+  background: rgba(7, 17, 26, 0.88);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
@@ -224,11 +223,10 @@ h2 {
 }
 
 .glass {
-  background: var(--card);
+  background: rgba(10, 19, 31, 0.86);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(20px);
 }
 
 .hero-card {
@@ -423,8 +421,8 @@ h2 {
 .bg-orb {
   position: fixed;
   border-radius: 999px;
-  filter: blur(80px);
-  opacity: 0.22;
+  filter: blur(48px);
+  opacity: 0.14;
   pointer-events: none;
   z-index: -1;
 }
@@ -446,15 +444,25 @@ h2 {
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  opacity: 1;
+  transform: none;
 }
 
-.reveal-delay { transition-delay: 0.12s; }
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .reveal-delay {
+    transition-delay: 0.08s;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .loading-state {
