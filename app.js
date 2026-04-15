@@ -182,6 +182,14 @@ async function renderApps() {
 
 function observeReveals() {
   const items = document.querySelectorAll('.reveal');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const smallScreen = window.innerWidth < 820;
+
+  if (reducedMotion || smallScreen) {
+    items.forEach((item) => item.classList.add('is-visible'));
+    return;
+  }
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -191,7 +199,7 @@ function observeReveals() {
         }
       });
     },
-    { threshold: 0.12 }
+    { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
   );
 
   items.forEach((item) => observer.observe(item));
