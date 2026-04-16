@@ -9,51 +9,94 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../../legal.css" />
   <style>
-    .help-grid {
+    .help-stack {
       display: grid;
       gap: 18px;
       margin-top: 28px;
     }
 
-    .help-item {
-      display: block;
-      padding: 22px 24px;
+    .help-block,
+    .help-link {
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 22px;
       background: rgba(255,255,255,0.02);
+      overflow: hidden;
+    }
+
+    .help-block summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 22px 24px;
+      font-size: 1.08rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .help-block summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .help-block summary::after {
+      content: "+";
+      font-size: 1.4rem;
+      line-height: 1;
+      opacity: 0.7;
+      transition: transform 0.18s ease;
+    }
+
+    .help-block[open] summary::after {
+      content: "–";
+    }
+
+    .help-body {
+      padding: 0 24px 24px;
+      opacity: 0.88;
+      line-height: 1.7;
+    }
+
+    .help-body p:first-child {
+      margin-top: 0;
+    }
+
+    .help-body ol,
+    .help-body ul {
+      margin: 14px 0 0;
+      padding-left: 22px;
+    }
+
+    .help-body li + li {
+      margin-top: 10px;
+    }
+
+    .help-link {
+      display: block;
+      padding: 22px 24px;
       text-decoration: none;
       color: inherit;
       transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     }
 
-    .help-item:hover {
+    .help-link:hover,
+    .help-block:hover {
       transform: translateY(-2px);
       border-color: rgba(98, 208, 255, 0.28);
       background: rgba(255,255,255,0.04);
     }
 
-    .help-item-title {
+    .help-link-title {
       display: block;
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       font-weight: 700;
       margin-bottom: 8px;
     }
 
-    .help-item-text {
+    .help-link-text {
       display: block;
       opacity: 0.82;
       line-height: 1.65;
-    }
-
-    .help-note {
-      margin-top: 22px;
-      opacity: 0.72;
-    }
-
-    .help-email {
-      color: inherit;
-      text-decoration: underline;
-      text-underline-offset: 3px;
     }
   </style>
 </head>
@@ -72,29 +115,47 @@
         <div class="legal-content">
           <p>If you need help with Flourish, use one of the options below.</p>
 
-          <div class="help-grid">
-            <a class="help-item" href="/cancel-subscription/">
-              <span class="help-item-title">Cancel subscription</span>
-              <span class="help-item-text">Open instructions for cancelling your subscription.</span>
+          <div class="help-stack">
+            <details class="help-block">
+              <summary>How to cancel a subscription</summary>
+              <div class="help-body">
+                <p>Subscriptions are managed by Apple through your App Store account.</p>
+                <ol>
+                  <li>Open <strong>Settings</strong> on your iPhone.</li>
+                  <li>Tap your <strong>Apple ID</strong> at the top.</li>
+                  <li>Tap <strong>Subscriptions</strong>.</li>
+                  <li>Select the Flourish subscription.</li>
+                  <li>Tap <strong>Cancel Subscription</strong>.</li>
+                </ol>
+                <p>If you do not see the subscription there, it may already be cancelled or it may have been purchased with a different Apple ID.</p>
+              </div>
+            </details>
+
+            <details class="help-block">
+              <summary>How to request a refund</summary>
+              <div class="help-body">
+                <p>Refunds for App Store purchases are handled by Apple.</p>
+                <ol>
+                  <li>Open Apple’s problem reporting page in your browser.</li>
+                  <li>Sign in with the Apple ID used for the purchase.</li>
+                  <li>Find the Flourish purchase or subscription.</li>
+                  <li>Choose <strong>Request a refund</strong>.</li>
+                  <li>Select a reason and submit your request.</li>
+                </ol>
+                <p>Apple reviews refund requests directly and decides the outcome.</p>
+              </div>
+            </details>
+
+            <a class="help-link" href="https://tally.so/r/n9JkPK" target="_blank" rel="noopener noreferrer">
+              <span class="help-link-title">Vote for features</span>
+              <span class="help-link-text">Share ideas and vote for improvements you would like to see in Flourish.</span>
             </a>
 
-            <a class="help-item" href="/request-a-refund/">
-              <span class="help-item-title">Request a refund</span>
-              <span class="help-item-text">Open the refund request page and follow the steps there.</span>
-            </a>
-
-            <a class="help-item" href="https://tally.so/r/n9JkPK">
-              <span class="help-item-title">Vote for features</span>
-              <span class="help-item-text">Share ideas and vote for improvements you would like to see in Flourish.</span>
-            </a>
-
-            <a class="help-item" href="mailto:mail@positive-mindset.net?subject=Flourish%20Support">
-              <span class="help-item-title">Contact us</span>
-              <span class="help-item-text">Email us directly for support, questions, or problems with Flourish.</span>
+            <a class="help-link" href="mailto:mail@positive-mindset.net?subject=Flourish%20Support">
+              <span class="help-link-title">Contact us</span>
+              <span class="help-link-text">Send a support email for questions, feedback, or problems with Flourish.</span>
             </a>
           </div>
-
-          <p class="help-note">Email: <a class="help-email" href="mailto:mail@positive-mindset.net">mail@positive-mindset.net</a></p>
         </div>
       </section>
     </div>
