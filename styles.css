@@ -286,8 +286,9 @@ h2 {
 .app-card {
   padding: 24px;
   display: grid;
-  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
-  gap: 24px;
+  grid-template-columns: minmax(0, 330px) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
 }
 
 .app-top {
