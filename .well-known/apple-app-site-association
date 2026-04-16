@@ -1,0 +1,31 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "9SA9CRF3YH.vladchechura.MotivationEN",
+                "paths": ["/quotes/"]
+            },
+            {
+                "appID": "9SA9CRF3YH.vladchechura.AffirmationsEN",
+                "paths": ["/affirmations/"]
+            },
+            {
+                "appID": "9SA9CRF3YH.vladchechura.VocabularyEN",
+                "paths": ["/vocabulary/"]
+            },
+            {
+                "appID": "9SA9CRF3YH.vladchechura.JokesEN",
+                "paths": ["/jokes/"]
+            },
+            {
+                "appID": "9SA9CRF3YH.vladchechura.FactsEN",
+                "paths": ["/facts/"]
+            },
+            {
+                "appID": "9SA9CRF3YH.positive-mindset.Meditation",
+                "paths": ["/bliss/"]
+            }
+        ]
+    }
+}
