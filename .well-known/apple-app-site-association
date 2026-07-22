@@ -25,6 +25,10 @@
             {
                 "appID": "9SA9CRF3YH.positive-mindset.Meditation",
                 "paths": ["/bliss/"]
+            },
+            {
+                "appID": "9SA9CRF3YH.com.positivemindset.MicroLearningApp",
+                "paths": ["/nova/"]
             }
         ]
     }
