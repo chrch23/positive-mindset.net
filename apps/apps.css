@@ -2,8 +2,6 @@
 .apps-hero .hero-lead { max-width: 760px; }
 .catalog { padding-bottom: 100px; display: grid; gap: 28px; }
 .catalog-card { padding: 40px; display: grid; grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr); gap: 48px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
-.catalog-card.catalog-reverse .catalog-copy { order: 2; }
-.catalog-card.catalog-reverse .screens { order: 1; }
 .catalog-head { display: flex; align-items: center; gap: 18px; }
 .catalog-head > img { width: 82px; height: 82px; background: #fff; border-radius: 22px; }
 .catalog-head h2 { font-size: 34px; }
@@ -17,8 +15,8 @@
 
 @media (max-width: 960px) {
   .catalog-card { grid-template-columns: 1fr; }
-  .catalog-card.catalog-reverse .catalog-copy, .catalog-card .catalog-copy { order: 1; }
-  .catalog-card.catalog-reverse .screens, .catalog-card .screens { order: 2; }
+  .catalog-card .catalog-copy { order: 1; }
+  .catalog-card .screens { order: 2; }
 }
 
 @media (max-width: 620px) {

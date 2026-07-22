@@ -108,7 +108,7 @@ function featuredProject(app, index) {
   const details = (app.details || []).map((item) => `<li>${item}</li>`).join("");
   const tags = (app.tags || []).map((tag) => `<span>${tag}</span>`).join("");
   return `
-    <article class="featured-project ${index % 2 ? "project-reverse" : ""} reveal">
+    <article class="featured-project reveal">
       <div class="project-copy">
         <p class="project-label">${app.subtitle}</p>
         <h3>${app.name}</h3>
@@ -157,7 +157,7 @@ async function renderCatalog() {
   if (!grid) return;
   const data = await Promise.all(APPS.map(loadApp));
   grid.innerHTML = data.map((app, index) => `
-    <article class="catalog-card ${index % 2 ? "catalog-reverse" : ""} reveal">
+    <article class="catalog-card reveal">
       <div class="catalog-copy">
         <div class="catalog-head"><img src="${app.icon}" alt="${app.name} icon" loading="lazy"><div><p class="project-label">${app.subtitle}</p><h2>${app.name}</h2></div></div>
         <p>${app.description}</p>
