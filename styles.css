@@ -68,10 +68,6 @@ h3 { font-size: 25px; line-height: 1.2; letter-spacing: -0.025em; }
 .hero-shot-b { width: 47%; left: 29%; top: 8px; transform: rotate(2deg); z-index: 3; }
 .hero-shot-c { width: 42%; right: 0; top: 95px; transform: rotate(5deg); z-index: 2; }
 
-.hero-highlight { position: absolute; z-index: 5; padding: 12px 16px; color: var(--text); background: rgba(255, 253, 251, 0.96); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 14px 34px rgba(62, 46, 41, 0.12); font-size: 12px; font-weight: 800; white-space: nowrap; }
-.hero-highlight-a { left: 0; top: 72px; }
-.hero-highlight-b { right: 0; bottom: 54px; }
-
 .proof { background: rgba(255, 255, 255, 0.28); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .proof-grid { display: grid; grid-template-columns: repeat(2, 1fr); }
 .proof-item { padding: 38px 28px; }
@@ -182,7 +178,6 @@ h3 { font-size: 25px; line-height: 1.2; letter-spacing: -0.025em; }
   .hero-actions .button { width: 100%; }
   .hero-collage { height: 360px; }
   .hero-shot { border-radius: 18px; }
-  .hero-highlight { display: none; }
   .proof-grid, .cards-grid, .process-grid { grid-template-columns: 1fr; }
   .proof-item:first-child { border-right: 0; border-bottom: 1px solid var(--line); }
   .featured-project { padding: 22px; gap: 28px; }
