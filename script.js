@@ -1,5 +1,43 @@
-const header=document.querySelector('[data-header]');const menuButton=document.querySelector('[data-menu-button]');const nav=document.querySelector('[data-nav]');
-function updateHeader(){if(header)header.classList.toggle('scrolled',window.scrollY>12)}updateHeader();window.addEventListener('scroll',updateHeader,{passive:true});
-if(menuButton&&nav){menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open))});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}))}
-document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
-function observeReveals(){const items=document.querySelectorAll('.reveal:not(.visible)');if(matchMedia('(prefers-reduced-motion: reduce)').matches){items.forEach(i=>i.classList.add('visible'));return}const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}}),{threshold:.07,rootMargin:'0px 0px -30px'});items.forEach(i=>o.observe(i))}observeReveals();window.observeReveals=observeReveals;
+const header = document.querySelector("[data-header]");
+const menuButton = document.querySelector("[data-menu-button]");
+const nav = document.querySelector("[data-nav]");
+const backToTop = document.querySelector("[data-back-to-top]");
+
+function updateScrollState() {
+  header?.classList.toggle("scrolled", window.scrollY > 10);
+  backToTop?.classList.toggle("visible", window.scrollY > 650);
+}
+
+window.addEventListener("scroll", updateScrollState, {passive: true});
+updateScrollState();
+
+menuButton?.addEventListener("click", () => {
+  const open = nav?.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", String(Boolean(open)));
+});
+
+nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
+  nav.classList.remove("open");
+  menuButton?.setAttribute("aria-expanded", "false");
+}));
+
+document.querySelectorAll("[data-year]").forEach((node) => { node.textContent = new Date().getFullYear(); });
+
+window.observeReveals = function observeReveals() {
+  const nodes = document.querySelectorAll(".reveal:not([data-observed])");
+  if (!("IntersectionObserver" in window)) {
+    nodes.forEach((node) => node.classList.add("visible"));
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.08});
+  nodes.forEach((node) => { node.dataset.observed = "true"; observer.observe(node); });
+};
+
+window.observeReveals();
