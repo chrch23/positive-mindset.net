@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MyVocab - Learn new words</title>
+  <link rel="icon" href="./icon.png" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      background: #FFFFFF;
+      color: #202020;
+      font-family: Arial, sans-serif;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 0;
+      right: 4px;
+      width: 100px;
+      height: 85px;
+      pointer-events: none;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .app-icon {
+      width: 86px;
+      height: 86px;
+      border-radius: 20px;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto;
+      padding: 24px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .description {
+      margin: 0 0 28px;
+      color: #666666;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 56px;
+      padding: 16px;
+      margin-bottom: 12px;
+      border-radius: 30px;
+      font-size: 17px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .app-store {
+      background: #202020;
+      color: #FFFFFF;
+    }
+
+    .android {
+      background: #F0F0F0;
+      color: #202020;
+    }
+
+    .instruction {
+      width: 100%;
+      margin-top: 16px;
+      padding: 24px;
+      background: #F5F5F5;
+      border-radius: 16px;
+      text-align: left;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .instruction p {
+      margin: 0;
+    }
+
+    .instruction p + p {
+      margin-top: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <svg class="arrow"
+       viewBox="0 0 100 85"
+       fill="none"
+       aria-hidden="true">
+    <path
+      d="M10 74 Q72 72 87 12 M72 22 L87 12 L94 29"
+      stroke="#202020"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+
+  <header>
+    <img
+      class="app-icon"
+      src="./icon.png"
+      alt="MyVocab"
+      width="86"
+      height="86"
+    />
+  </header>
+
+  <main>
+
+    <h1>MyVocab</h1>
+
+    <p class="description">
+      Expand your vocabulary daily
+    </p>
+
+    <a class="button app-store"
+       href="https://apps.apple.com/us/app/myvocab-learn-new-words/id1614457796">
+      🍎 App Store
+    </a>
+
+    <a class="button android"
+       href="https://tally.so/r/Z9a27V">
+      🤖 Android Waitlist
+    </a>
+
+    <div class="instruction">
+      <p>
+        On <strong>TikTok</strong>, tap the
+        <strong>three dots in the top-right corner.</strong>
+      </p>
+      <p>
+        Select <strong>“Open in browser”</strong>
+        to download MyVocab.
+      </p>
+    </div>
+
+  </main>
+
+</body>
+</html>
